@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-
+// создаем динамический массив и заполняем его
 	int size = 0;
 	cout << "How many elements in array:\n";
 	cin >> size;
@@ -13,6 +13,7 @@ int main() {
 		cout << "Index " << i << ". Value ";
 		cin >> arr[i];
 	}
+// создаем меню для работы	
 	bool not_end = true;
 	while (not_end) {
 		cout << "What you want to do?\nYour array\n";
@@ -26,6 +27,7 @@ int main() {
 		int choise;
 		cin >> choise;
 		switch (choise) {
+// находим сумму отрицательных элементов массива			
 		case 1: {
 			int sum = 0;
 			for (int i = 0; i < size; i++) {
@@ -35,6 +37,7 @@ int main() {
 			cout << "The sum of negative elements is " << sum << endl;
 			break;
 		}
+// находим произведение элементов массива с нечетными индексами
 		case 2: {
 			int mult = 1;
 			for (int i = 0; i < size;) {
@@ -43,7 +46,7 @@ int main() {
 			}
 			cout << "The product of array elements with odd numbers is " << mult << endl;
 			break;
-		}
+// находим сумму элементов между двумя нулями, если их нет то создаем условие для работы		
 		case 3: {
 			int nul = 0, start = 0, end = 0, sum = 0;;
 			for (int i = 0; i < size; i++) {
@@ -108,10 +111,12 @@ int main() {
 			}
 			break;
 			}
+// выход из программы при нажатии 0			
 		case 0:
 			cout << "Goodbye!\n";
 			not_end = false;
 			break;
+// вариант на случай, если пользователь неправильно выбрал действие в меню			
 		default:
 			cout << "You have not chosen an action\n";
 			break;
